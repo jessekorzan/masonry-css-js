@@ -20,6 +20,18 @@ class App extends Component {
     }
     componentDidMount() {
         this.fetchEr();
+        
+/*
+        // cheap responsive approach -- if you want
+        window.addEventListener("resize", () => {
+            let winWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            if (winWidth <= 900) {
+                this.reorder(this.state.cardsOG, 2);
+            } else {
+                this.reorder(this.state.cardsOG, 5);
+            }
+        })
+*/
     }
     fetchEr = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts`)
@@ -31,18 +43,26 @@ class App extends Component {
         .catch(e => e);
     }
     reorder = (arr, columns) => {
+        // READ HERE
+        // this is the magic
+        // re-order the array so the "cards" read left-right
+        // cols === CSS column-count value
+        
         const cols = columns;
         const out = [];
         let col = 0;
         while(col < cols) {
             for(let i = 0; i < arr.length; i += cols) {
                 let _val = arr[i + col];
-                if (_val != undefined)
+                if (_val !== undefined)
                     out.push(_val);
             }
             col++;
         }
         this.setState({ cards: out, columns: columns });
+        
+        // yes, I know Nick... you had another slicker ES6-y implementation
+        // but this one I could understand :)
     }
     handleButtonClick = (layout, columns) => {
         this.setState({ 
@@ -54,7 +74,7 @@ class App extends Component {
     }
     handleClickCard = (card) => {
         this.setState({
-            cardActive: (this.state.cardActive != card) ? card : false
+            cardActive: (this.state.cardActive !== card) ? card : false
         })
     }
     render() {
@@ -74,20 +94,22 @@ class App extends Component {
                             <p>Layout using CSS <span>column-count</span> only &mdash; <a href="https://github.com/jessekorzan/masonry-css-js">GitHub</a></p>
                         </div>
                     </div>
-                {CARDS &&
-                    <div className={`layout + ${this.state.layout}`} style={{"columnCount" : this.state.columns}}>
-                    {CARDS.map( (card, index) =>                         
-                        <div className={(card === this.state.cardActive) ? "card active" : "card"} onClick={()=>this.handleClickCard(card)}>
-                            <div className="media"></div>
-                            <div>
-                                <h1>{ card.id }</h1>
-                                <h2>{ card.title }</h2>
-                                <p>{ card.body }{ card.title }</p>
+                    {
+                        // render "cards" to view
+                        CARDS &&
+                        <div className={`layout + ${this.state.layout}`} style={{"columnCount" : this.state.columns}}>
+                        {CARDS.map( (card, index) =>                         
+                            <div key={index} className={(card === this.state.cardActive) ? "card active" : "card"} onClick={()=>this.handleClickCard(card)}>
+                                <div className="media"></div>
+                                <div>
+                                    <h1>{ card.id }</h1>
+                                    <h2>{ card.title }</h2>
+                                    <p>{ card.body }{ card.title }</p>
+                                </div>
                             </div>
+                        )}
                         </div>
-                    )}
-                    </div>
-                }
+                    }
                 </div>
             </div>
         );
