@@ -125,9 +125,16 @@ nav {
         padding: $spacer/2;
     }
     .media {
+        position: relative;
         min-height: 200px;
         height: 15vh;
+        overflow: hidden;
+        padding: 0;
         background: darken($grey, 8%); 
+        img {
+            filter: grayscale(100%);
+            width: 100%;
+        }
     }
     h2, h3, h4, p {
         font-family: "redacted_scriptbold";

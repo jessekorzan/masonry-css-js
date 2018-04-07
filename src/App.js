@@ -29,7 +29,6 @@ class App extends Component {
         while(col < cols) {
             for(let i = 0; i < arr.length; i += cols) {
                 let _val = arr[i + col];
-                console.log(_val);
                 if (_val != undefined)
                     out.push(_val);
             }
@@ -65,7 +64,7 @@ class App extends Component {
                     <div className={`layout + ${this.state.layout}`} style={{"columnCount" : this.state.columns}}>
                     {CARDS.map( (card, index) =>                         
                         <div className={(card === this.state.cardActive) ? "card active" : "card"} onClick={()=>this.handleClickCard(card)}>
-                            <div className="media"></div>
+                            <div className="media"><img src="http://www.thrashermagazine.com/imagesV2/Junk_Drawer/2011/12/610lanceint1.jpg"/></div>
                             <div>
                                 <h1>{ card.id }</h1>
                                 <h2>{ card.title }</h2>
