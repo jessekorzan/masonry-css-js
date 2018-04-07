@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import 'normalize.css'; 
 import './styles.css';
 
+// Jesse Korzan
+// copyright 2018 Klue Labs
+// CSS column-count masonry w/ left-right reflow
+// special thx to NickB
+//
+// kick ass out there, ppl 1:1
+
 class App extends Component {
     constructor() {
         super();
