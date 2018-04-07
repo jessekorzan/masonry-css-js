@@ -1,4 +1,4 @@
-# [Live Demo](https://masonry-css-js.netlify.com/)
+# Live Demo: [https://masonry-css-js.netlify.com/](https://masonry-css-js.netlify.com/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
