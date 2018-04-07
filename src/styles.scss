@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,600,700');
+$font : "Heebo";
+
+$black : #2b2929;
+$blue : #0090ff;
+$white: #fff;
+$grey: #f5f3f3;
+$red: #c80722;
+
+$spacer: 44px;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    background: $grey;
+    color: $black;
+    font-family: $font, sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+ h1, h2, h3, h4 {
+     margin: 0 0 $spacer/3;
+ }
+
+nav {
+    background: $black;
+    height: $spacer;
+    text-align: center;
+    padding: 4px;
+    button {
+        border: 1px solid darken($blue, 25%);
+        background: $black;
+        color: $blue;
+        padding: 0 $spacer/5;
+        border-left: none;
+        height: 36px;
+        text-transform: uppercase;
+        font-size: 12px;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }    
+        &:first-child {
+            border-left: 1px solid darken($blue, 25%);
+        }
+        &:active {
+            background: $blue;
+            color: $grey;
+        }
+    }
+}
+
+.layout--wrapper {
+    height: calc(100vh - 44px);
+    overflow-y: scroll;
+}
+.layout {
+/*
+    padding: $spacer/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: $spacer/3;
+*/
+
+/*
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+*/
+    
+    padding: $spacer/3;
+    &.flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+        .card {
+            width: 20%;
+        }
+    }
+    &.masonry {
+        column-count: 3;
+        column-gap: $spacer/3 - 8px;
+        .card {
+            break-inside: avoid;
+            float: left;
+            //margin: 5px;
+        }
+        .card:nth-child(6n+1){
+            clear: left;
+        }
+    }
+    &.single-column {
+        width: 440px;
+        margin: 0 auto;
+    }
+    &.two-column {
+        max-width: 800px;
+        margin: 0 auto;
+        column-count: 2;
+        column-gap: $spacer/3 - 8px;
+        .card {
+            break-inside: avoid;
+        }
+    }
+}
+
+.card {
+    position: relative;
+    border: 4px solid $grey;
+    background: $white;
+    min-height: 288px;
+    width: 100%;
+    margin-bottom: $spacer/3 - 8px;
+    color: lighten($black, 50%);
+    > div {
+        padding: $spacer/2;
+    }
+    .media {
+        min-height: 200px;
+        height: 15vh;
+        background: darken($grey, 8%); 
+    }
+    h2, h3, h4, p {
+        font-family: "redacted_scriptbold";
+    }
+    &.active {
+        border-color: $blue;
+        color: $blue;
+    }
+}
