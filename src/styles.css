@@ -46,17 +46,6 @@ nav {
   overflow-y: scroll; }
 
 .layout {
-  /*
-    padding: $spacer/3;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: $spacer/3;
-*/
-  /*
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-*/
   padding: 14.66667px; }
   .layout.flex {
     display: flex;
@@ -84,6 +73,15 @@ nav {
     .layout.two-column .card {
       break-inside: avoid; }
 
+.info {
+  text-align: center;
+  padding: 14.66667px; }
+  .info * {
+    margin: 0; }
+  .info span {
+    color: #c80722;
+    font-family: monospace; }
+
 .card {
   position: relative;
   border: 4px solid #f5f3f3;
@@ -95,9 +93,15 @@ nav {
   .card > div {
     padding: 22px; }
   .card .media {
+    position: relative;
     min-height: 200px;
     height: 15vh;
-    background: #e2dddd; }
+    overflow: hidden;
+    padding: 0;
+    background: #d2c9c9; }
+    .card .media img {
+      filter: grayscale(100%);
+      width: 100%; }
   .card h2, .card h3, .card h4, .card p {
     font-family: "redacted_scriptbold"; }
   .card.active {

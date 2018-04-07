@@ -7,7 +7,8 @@ class App extends Component {
         super();
         this.state = {
             layout: "masonry",
-            columns: 5
+            columns: 5,
+            maxCards: 20
         };
     }
     componentDidMount() {
@@ -17,8 +18,8 @@ class App extends Component {
         fetch(`https://jsonplaceholder.typicode.com/posts`)
         .then(response => response.json())
         .then(result => {
-            this.reorder(result, this.state.columns);
-            this.setState({ cardsOG: result });
+            this.reorder(result.slice(0,this.state.maxCards), this.state.columns);
+            this.setState({ cardsOG: result.slice(0,this.state.maxCards) });
         })
         .catch(e => e);
     }
@@ -54,17 +55,23 @@ class App extends Component {
         return (
             <div>
                 <nav>
-                    <button onClick={()=>this.setState({ layout: "masonry", columns: 5, cards: this.state.cardsOG })}>five-column (no js)</button>
+                    <button onClick={()=>this.setState({ layout: "masonry", columns: 5, cards: this.state.cardsOG })}>five-column (no reorder)</button>
                     <button onClick={()=>this.handleButtonClick("masonry", 5)}>five-column</button>
                     <button onClick={()=>this.handleButtonClick("two-column", 2)}>two-column</button>
                     <button onClick={()=>this.handleButtonClick("single-column", 1)}>single-column</button>
                 </nav>
                 <div className="layout--wrapper">
+                    <div className="info">
+                        <div>
+                            <h2>Card Order: <span>{ CARDS && CARDS.map( card => `${card.id} `) }</span></h2>
+                            <p>Layout using CSS <span>column-count</span> only.</p>
+                        </div>
+                    </div>
                 {CARDS &&
                     <div className={`layout + ${this.state.layout}`} style={{"columnCount" : this.state.columns}}>
                     {CARDS.map( (card, index) =>                         
                         <div className={(card === this.state.cardActive) ? "card active" : "card"} onClick={()=>this.handleClickCard(card)}>
-                            <div className="media"><img src="http://www.thrashermagazine.com/imagesV2/Junk_Drawer/2011/12/610lanceint1.jpg"/></div>
+                            <div className="media"></div>
                             <div>
                                 <h1>{ card.id }</h1>
                                 <h2>{ card.title }</h2>

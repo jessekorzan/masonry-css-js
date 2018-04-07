@@ -63,19 +63,6 @@ nav {
     overflow-y: scroll;
 }
 .layout {
-/*
-    padding: $spacer/3;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: $spacer/3;
-*/
-
-/*
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-*/
-    
     padding: $spacer/3;
     &.flex {
         display: flex;
@@ -112,7 +99,17 @@ nav {
         }
     }
 }
-
+.info {
+    text-align: center;
+    padding: $spacer/3;
+    * {
+        margin: 0;
+    }
+    span {
+        color: $red;
+        font-family: monospace;
+    }
+}
 .card {
     position: relative;
     border: 4px solid $grey;
@@ -130,7 +127,7 @@ nav {
         height: 15vh;
         overflow: hidden;
         padding: 0;
-        background: darken($grey, 8%); 
+        background: darken($grey, 15%); 
         img {
             filter: grayscale(100%);
             width: 100%;
