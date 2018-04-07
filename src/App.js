@@ -71,7 +71,7 @@ class App extends Component {
                     <div className="info">
                         <div>
                             <h2>Card Order: <span>{ CARDS && CARDS.map( card => `${card.id} `) }</span></h2>
-                            <p>Layout using CSS <span>column-count</span> only.</p>
+                            <p>Layout using CSS <span>column-count</span> only &mdash; <a href="https://github.com/jessekorzan/masonry-css-js">GitHub</a></p>
                         </div>
                     </div>
                 {CARDS &&
