@@ -62,10 +62,10 @@ class App extends Component {
         return (
             <div>
                 <nav>
-                    <button onClick={()=>this.setState({ layout: "masonry", columns: 5, cards: this.state.cardsOG })}>five-column (no reorder)</button>
-                    <button onClick={()=>this.handleButtonClick("masonry", 5)}>five-column</button>
-                    <button onClick={()=>this.handleButtonClick("two-column", 2)}>two-column</button>
-                    <button onClick={()=>this.handleButtonClick("single-column", 1)}>single-column</button>
+                    <a href="#1" id="1" onClick={()=>this.setState({ layout: "masonry", columns: 5, cards: this.state.cardsOG })}>five-column (no reorder)</a>
+                    <a href="#2" id="2" onClick={()=>this.handleButtonClick("masonry", 5)}>five-column</a>
+                    <a href="#3" id="3" onClick={()=>this.handleButtonClick("two-column", 2)}>two-column</a>
+                    <a href="#4" id="4" onClick={()=>this.handleButtonClick("single-column", 1)}>single-column</a>
                 </nav>
                 <div className="layout--wrapper">
                     <div className="info">

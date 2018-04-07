@@ -28,14 +28,20 @@ body {
 }
  h1, h2, h3, h4 {
      margin: 0 0 $spacer/3;
- }
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+}
+ 
 
 nav {
     background: $black;
     height: $spacer;
     text-align: center;
     padding: 4px;
-    button {
+    a {
         border: 1px solid darken($blue, 25%);
         background: $black;
         color: $blue;
@@ -44,19 +50,24 @@ nav {
         height: 36px;
         text-transform: uppercase;
         font-size: 12px;
+        line-height: 36px;
+        text-decoration: none;
         cursor: pointer;
+        display: inline-block;
         &:focus {
             outline: none;
         }    
         &:first-child {
             border-left: 1px solid darken($blue, 25%);
         }
-        &:active {
+        &:active, &:target {
             background: $blue;
             color: $grey;
         }
     }
 }
+
+
 
 .layout--wrapper {
     height: calc(100vh - 44px);
@@ -103,7 +114,7 @@ nav {
     text-align: center;
     padding: $spacer/3;
     * {
-        margin: 0;
+        margin: 8px 0 0;
     }
     span {
         color: $red;

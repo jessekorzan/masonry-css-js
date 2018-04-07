@@ -18,12 +18,16 @@ body {
 h1, h2, h3, h4 {
   margin: 0 0 14.66667px; }
 
+a {
+  color: #0090ff;
+  text-decoration: none; }
+
 nav {
   background: #2b2929;
   height: 44px;
   text-align: center;
   padding: 4px; }
-  nav button {
+  nav a {
     border: 1px solid #004880;
     background: #2b2929;
     color: #0090ff;
@@ -32,12 +36,15 @@ nav {
     height: 36px;
     text-transform: uppercase;
     font-size: 12px;
-    cursor: pointer; }
-    nav button:focus {
+    line-height: 36px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block; }
+    nav a:focus {
       outline: none; }
-    nav button:first-child {
+    nav a:first-child {
       border-left: 1px solid #004880; }
-    nav button:active {
+    nav a:active, nav a:target {
       background: #0090ff;
       color: #f5f3f3; }
 
@@ -77,7 +84,7 @@ nav {
   text-align: center;
   padding: 14.66667px; }
   .info * {
-    margin: 0; }
+    margin: 8px 0 0; }
   .info span {
     color: #c80722;
     font-family: monospace; }
