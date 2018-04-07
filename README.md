@@ -11,6 +11,7 @@ The problem (sometimes) is the way the content flows (see the diagram above). Ty
 The only "help" that JS provides is re-ordering the array before rendering to the view so that we can use CSS column-count for the layout. Again, for example, this array could be a feed of recent news posts.
 
 Check the demo: [here](https://masonry-css-js.netlify.com/)
+
 Check out the code: [react component](https://github.com/jessekorzan/masonry-css-js/blob/master/src/App.js)
 
 Special thanks to my Klue teammate [@nickb](https://twitter.com/nickb) for figuring out the array re-order (and in a way even I could understand).
