@@ -9,6 +9,25 @@ import './styles.css';
 //
 // kick ass out there, ppl 1:1
 
+const Card = (props) => 
+    <div className={(props.card === props.active) ? "card active" : "card"} onClick={()=>props.handleClickCard(props.card)}>
+        <div className="media"></div>
+        <div>
+            <h1>{ props.card.id }</h1>
+            <h2>{ props.card.title }</h2>
+            <p><strong>{ props.card.title }</strong>{ props.card.body }</p>
+        </div>
+    </div>
+
+const Layout = (props) => 
+    // Masonry layout of cards 
+    // column-count : X 
+    <div className={`layout + ${props.style}`} style={{"columnCount" : props.columns}}>
+        {props.cards.map( (card, index) => 
+            <Card key={index} card={card} active={props.active} handleClickCard={props.handleClickCard}/>
+        )}
+    </div>
+
 class App extends Component {
     constructor() {
         super();
@@ -90,26 +109,11 @@ class App extends Component {
                 <div className="layout--wrapper">
                     <div className="info">
                         <div>
-                            <h2>Card Order: <span>{ CARDS && CARDS.map( card => `${card.id} `) }</span></h2>
-                            <p>Layout using CSS <span>column-count</span> only &mdash; <a href="https://github.com/jessekorzan/masonry-css-js">GitHub</a></p>
+                            <h2>Card Array: { CARDS && CARDS.map( card => <span>{card.id}</span>) }</h2>
+                            <p>Layout using CSS <i>column-count</i> only &mdash; <a href="https://github.com/jessekorzan/masonry-css-js">GitHub</a></p>
                         </div>
                     </div>
-                    {
-                        // render "cards" to view
-                        CARDS &&
-                        <div className={`layout + ${this.state.layout}`} style={{"columnCount" : this.state.columns}}>
-                        {CARDS.map( (card, index) =>                         
-                            <div key={index} className={(card === this.state.cardActive) ? "card active" : "card"} onClick={()=>this.handleClickCard(card)}>
-                                <div className="media"></div>
-                                <div>
-                                    <h1>{ card.id }</h1>
-                                    <h2>{ card.title }</h2>
-                                    <p>{ card.body }{ card.title }</p>
-                                </div>
-                            </div>
-                        )}
-                        </div>
-                    }
+                    { CARDS && <Layout style={this.state.layout} columns={this.state.columns} cards={CARDS} active={this.state.cardActive} handleClickCard={this.handleClickCard} /> }
                 </div>
             </div>
         );

@@ -62,11 +62,10 @@ nav {
     .layout.flex .card {
       width: 20%; }
   .layout.masonry {
-    column-count: 3;
+    column-count: 5;
     column-gap: 6.66667px; }
     .layout.masonry .card {
-      break-inside: avoid;
-      float: left; }
+      break-inside: avoid; }
     .layout.masonry .card:nth-child(6n+1) {
       clear: left; }
   .layout.single-column {
@@ -86,8 +85,16 @@ nav {
   .info * {
     margin: 8px 0 0; }
   .info span {
-    color: #c80722;
-    font-family: monospace; }
+    background: #fff;
+    border: #f5f3f3 solid 1px;
+    margin-right: 2px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block; }
 
 .card {
   position: relative;

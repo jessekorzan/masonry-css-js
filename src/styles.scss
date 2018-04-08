@@ -85,12 +85,10 @@ nav {
         }
     }
     &.masonry {
-        column-count: 3;
+        column-count: 5;
         column-gap: $spacer/3 - 8px;
         .card {
             break-inside: avoid;
-            float: left;
-            //margin: 5px;
         }
         .card:nth-child(6n+1){
             clear: left;
@@ -117,8 +115,17 @@ nav {
         margin: 8px 0 0;
     }
     span {
-        color: $red;
-        font-family: monospace;
+        background: $white;
+        border: $grey solid 1px;
+        margin-right: 2px;
+        width:30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        display: inline-block;
+        //font-family: monospace;
     }
 }
 .card {
