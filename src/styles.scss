@@ -86,7 +86,7 @@ nav {
     }
     &.masonry {
         column-count: 5;
-        column-gap: $spacer/3 - 8px;
+        column-gap: $spacer/4 - 8px;
         .card {
             break-inside: avoid;
         }
@@ -102,7 +102,7 @@ nav {
         max-width: 800px;
         margin: 0 auto;
         column-count: 2;
-        column-gap: $spacer/3 - 8px;
+        column-gap: $spacer/4 - 8px;
         .card {
             break-inside: avoid;
         }
@@ -134,7 +134,7 @@ nav {
     background: $white;
     min-height: 288px;
     width: 100%;
-    margin-bottom: $spacer/3 - 8px;
+    margin-bottom: $spacer/4 - 8px;
     color: lighten($black, 50%);
     > div {
         padding: $spacer/2;
