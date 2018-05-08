@@ -89,6 +89,7 @@ nav {
         column-gap: $spacer/5 - 8px;
         .card {
             break-inside: avoid;
+            page-break-inside: avoid;
         }
         .card:nth-child(6n+1){
             clear: left;
@@ -105,6 +106,7 @@ nav {
         column-gap: $spacer/5 - 8px;
         .card {
             break-inside: avoid;
+            page-break-inside: avoid;
         }
     }
 }
