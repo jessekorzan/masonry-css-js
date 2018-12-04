@@ -14,6 +14,8 @@ Check the demo: [here](https://masonry-css-js.netlify.com/)
 
 Check out the code: [react component](https://github.com/jessekorzan/masonry-css-js/blob/master/src/App.js)
 
+Post on Medium: [Easy CSS Masonry Layout w/ Left-To-Right Content Flow](https://hackernoon.com/masonry-layout-technique-react-demo-of-100-css-control-of-the-view-e4190fa4296)
+
 Special thanks to my Klue teammate [@nickb](https://twitter.com/nickb) for figuring out the array re-order (and in a way even I could understand).
 
 ---
