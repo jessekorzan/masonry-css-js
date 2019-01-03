@@ -22,7 +22,7 @@ const Card = (props) =>
 const Layout = (props) => 
     // Masonry layout of cards 
     // column-count : X 
-    <div className={`layout + ${props.style}`} style={{"columnCount" : props.columns}}>
+    <div className={`layout` + `${props.style}`} style={{"columnCount" : props.columns}}>
         {props.cards.map( (card, index) => 
             <Card key={index} card={card} active={props.active} handleClickCard={props.handleClickCard}/>
         )}
