@@ -106,38 +106,43 @@ nav {
     }
     &.masonry {
         column-count: 5;
-        column-gap: $spacer/3 - 8px;
+        column-gap: $spacer/5 - 8px;
         .card {
             break-inside: avoid;
+            page-break-inside: avoid;
         }
         .card:nth-child(6n+1){
             clear: left;
         }
     }
     &.single-column {
-        width: 440px;
+        max-width: 440px;
         margin: 0 auto;
     }
     &.two-column {
         max-width: 800px;
         margin: 0 auto;
         column-count: 2;
-        column-gap: $spacer/3 - 8px;
+        column-gap: $spacer/5 - 8px;
         .card {
             break-inside: avoid;
+            page-break-inside: avoid;
         }
     }
 }
 .info {
     text-align: center;
-    padding: $spacer/3;
-    * {
+    padding: $spacer/4;
+    > * {
         margin: 8px 0 0;
+    }
+    h2 {
+        line-height: 32px;
     }
     span {
         background: $white;
         border: $grey solid 1px;
-        margin-right: 2px;
+        margin-right: 1px;
         width:30px;
         height: 30px;
         line-height: 30px;
@@ -154,8 +159,10 @@ nav {
     background: $white;
     min-height: 288px;
     width: 100%;
-    margin-bottom: $spacer/3 - 8px;
+    margin-bottom: $spacer/5 - 8px;
     color: lighten($black, 50%);
+    break-inside: avoid;
+    page-break-inside: avoid;
     > div {
         padding: $spacer/2;
     }
@@ -165,7 +172,8 @@ nav {
         height: 15vh;
         overflow: hidden;
         padding: 0;
-        background: transparent; 
+        background: rgba(#336699, 0.15); 
+        border: 6px solid $white;
         img {
             filter: grayscale(100%);
             width: 100%;

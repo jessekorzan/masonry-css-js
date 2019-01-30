@@ -82,31 +82,35 @@ nav {
           width: 50%; } }
   .layout.masonry {
     column-count: 5;
-    column-gap: 6.66667px; }
+    column-gap: 0.8px; }
     .layout.masonry .card {
-      break-inside: avoid; }
+      break-inside: avoid;
+      page-break-inside: avoid; }
     .layout.masonry .card:nth-child(6n+1) {
       clear: left; }
   .layout.single-column {
-    width: 440px;
+    max-width: 440px;
     margin: 0 auto; }
   .layout.two-column {
     max-width: 800px;
     margin: 0 auto;
     column-count: 2;
-    column-gap: 6.66667px; }
+    column-gap: 0.8px; }
     .layout.two-column .card {
-      break-inside: avoid; }
+      break-inside: avoid;
+      page-break-inside: avoid; }
 
 .info {
   text-align: center;
-  padding: 14.66667px; }
-  .info * {
+  padding: 11px; }
+  .info > * {
     margin: 8px 0 0; }
+  .info h2 {
+    line-height: 32px; }
   .info span {
     background: #fff;
     border: #f5f3f3 solid 1px;
-    margin-right: 2px;
+    margin-right: 1px;
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -121,8 +125,10 @@ nav {
   background: #fff;
   min-height: 288px;
   width: 100%;
-  margin-bottom: 6.66667px;
-  color: #aca7a7; }
+  margin-bottom: 0.8px;
+  color: #aca7a7;
+  break-inside: avoid;
+  page-break-inside: avoid; }
   .card > div {
     padding: 22px; }
   .card .media {
@@ -131,7 +137,8 @@ nav {
     height: 15vh;
     overflow: hidden;
     padding: 0;
-    background: transparent; }
+    background: rgba(51, 102, 153, 0.15);
+    border: 6px solid #fff; }
     .card .media img {
       filter: grayscale(100%);
       width: 100%; }
