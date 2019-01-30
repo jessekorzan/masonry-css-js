@@ -78,10 +78,30 @@ nav {
     &.flex {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
         align-items: stretch;
         .card {
-            width: 20%;
+            width: 16.666667%;
+            height: 420px;
+            margin-bottom: 0;
+            p {
+                width: 80%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+             @media screen and (max-width: 1419px) {
+                width: 20%;
+            }
+            @media screen and (max-width: 1023px) {
+                width: 25%;
+            }
+            @media screen and (max-width: 727px) {
+                width: 33.33334%;
+            }
+            @media screen and (max-width: 600px) {
+                width: 50%;
+            }
         }
     }
     &.masonry {
@@ -145,7 +165,7 @@ nav {
         height: 15vh;
         overflow: hidden;
         padding: 0;
-        background: darken($grey, 15%); 
+        background: transparent; 
         img {
             filter: grayscale(100%);
             width: 100%;

@@ -105,6 +105,7 @@ class App extends Component {
                     <a href="#2" id="2" onClick={()=>this.handleButtonClick("masonry", 5)}>five-column</a>
                     <a href="#3" id="3" onClick={()=>this.handleButtonClick("two-column", 2)}>two-column</a>
                     <a href="#4" id="4" onClick={()=>this.handleButtonClick("single-column", 1)}>single-column</a>
+                    <a href="#5" id="5" onClick={()=>this.handleButtonClick("flex", 1)}>flex-box</a>
                 </nav>
                 <div className="layout--wrapper">
                     <div className="info">
