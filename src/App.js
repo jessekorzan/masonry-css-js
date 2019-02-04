@@ -101,11 +101,11 @@ class App extends Component {
         return (
             <div>
                 <nav>
-                    <a href="#1" id="1" onClick={()=>this.setState({ layout: "masonry", columns: 5, cards: this.state.cardsOG })}>five-column (no reorder)</a>
-                    <a href="#2" id="2" onClick={()=>this.handleButtonClick("masonry", 5)}>5-column</a>
-                    <a href="#3" id="3" onClick={()=>this.handleButtonClick("two-column", 2)}>2-column</a>
-                    <a href="#5" id="5" onClick={()=>this.handleButtonClick("flex", 3)}>3-column</a>
-                    <a href="#4" id="4" onClick={()=>this.handleButtonClick("single-column", 1)}>1-column</a>
+                    <a href="#1" id="1" onClick={()=>this.setState({ layout: "masonry", columns: 5, cards: this.state.cardsOG })}>5-col (no reorder)</a>
+                    <a href="#2" id="2" onClick={()=>this.handleButtonClick("masonry", 5)}>5-col</a>
+                    <a href="#3" id="3" onClick={()=>this.handleButtonClick("two-column", 2)}>2-col</a>
+                    <a href="#5" id="5" onClick={()=>this.handleButtonClick("flex", 3)}>3-col</a>
+                    <a href="#4" id="4" onClick={()=>this.handleButtonClick("single-column", 1)}>1-col</a>
                 </nav>
                 <div className="layout--wrapper">
                     <div className="info">
