@@ -1,4 +1,4 @@
-# Live Demo: [https://masonry-css-js.netlify.com/](https://masonry-css-js.netlify.com/)
+# Live Demo: [https://masonry-css-js.netlify.app/](https://masonry-css-js.netlify.app/)
 
 ![problem image](https://github.com/jessekorzan/masonry-css-js/blob/master/public/problem-css-masonry.png "the problem")
 
@@ -10,7 +10,7 @@ The problem (sometimes) is the way the content flows (see the diagram above). Ty
 ## The Solution
 The only "help" that JS provides is re-ordering the array before rendering to the view so that we can use CSS column-count for the layout. Again, for example, this array could be a feed of recent news posts.
 
-Check the demo: [here](https://masonry-css-js.netlify.com/)
+Check the demo: [here](https://masonry-css-js.netlify.app/)
 
 Check out the code: [react component](https://github.com/jessekorzan/masonry-css-js/blob/master/src/App.js)
 
